@@ -1,5 +1,5 @@
 //
-//  ViewController.h
+//  SecondViewController.h
 //  LawyerV2
 //
 //  Created by Administrator on 7/5/15.
@@ -8,10 +8,6 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ViewController : UIViewController
-
-- (IBAction)exitView:(UIStoryboardSegue *)sender;
-
+@interface SecondViewController : UIViewController
 
 @end
-
