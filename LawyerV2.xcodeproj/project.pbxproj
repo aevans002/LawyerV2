@@ -15,6 +15,8 @@
 		C3C8C82C1B49AD70002BFEDB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3C8C82A1B49AD70002BFEDB /* LaunchScreen.xib */; };
 		C3C8C8381B49AD70002BFEDB /* LawyerV2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C8C8371B49AD70002BFEDB /* LawyerV2Tests.m */; };
 		C3C8C8431B49B575002BFEDB /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C8C8421B49B575002BFEDB /* SecondViewController.m */; };
+		C3C8C8461B5199F1002BFEDB /* SCISProgamsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C8C8451B5199F1002BFEDB /* SCISProgamsTableViewController.m */; };
+		C3C8C8491B53071A002BFEDB /* SCISCoursesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C8C8481B53071A002BFEDB /* SCISCoursesTableViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +45,10 @@
 		C3C8C8371B49AD70002BFEDB /* LawyerV2Tests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = LawyerV2Tests.m; sourceTree = "<group>"; };
 		C3C8C8411B49B575002BFEDB /* SecondViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SecondViewController.h; sourceTree = "<group>"; };
 		C3C8C8421B49B575002BFEDB /* SecondViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SecondViewController.m; sourceTree = "<group>"; };
+		C3C8C8441B5199F1002BFEDB /* SCISProgamsTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCISProgamsTableViewController.h; sourceTree = "<group>"; };
+		C3C8C8451B5199F1002BFEDB /* SCISProgamsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCISProgamsTableViewController.m; sourceTree = "<group>"; };
+		C3C8C8471B53071A002BFEDB /* SCISCoursesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCISCoursesTableViewController.h; sourceTree = "<group>"; };
+		C3C8C8481B53071A002BFEDB /* SCISCoursesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCISCoursesTableViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,8 +95,12 @@
 				C3C8C8221B49AD70002BFEDB /* ViewController.h */,
 				C3C8C8231B49AD70002BFEDB /* ViewController.m */,
 				C3C8C8251B49AD70002BFEDB /* Main.storyboard */,
+				C3C8C8471B53071A002BFEDB /* SCISCoursesTableViewController.h */,
+				C3C8C8481B53071A002BFEDB /* SCISCoursesTableViewController.m */,
 				C3C8C8411B49B575002BFEDB /* SecondViewController.h */,
 				C3C8C8421B49B575002BFEDB /* SecondViewController.m */,
+				C3C8C8441B5199F1002BFEDB /* SCISProgamsTableViewController.h */,
+				C3C8C8451B5199F1002BFEDB /* SCISProgamsTableViewController.m */,
 				C3C8C8281B49AD70002BFEDB /* Images.xcassets */,
 				C3C8C82A1B49AD70002BFEDB /* LaunchScreen.xib */,
 				C3C8C81B1B49AD70002BFEDB /* Supporting Files */,
@@ -225,8 +235,10 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3C8C8431B49B575002BFEDB /* SecondViewController.m in Sources */,
+				C3C8C8461B5199F1002BFEDB /* SCISProgamsTableViewController.m in Sources */,
 				C3C8C8241B49AD70002BFEDB /* ViewController.m in Sources */,
 				C3C8C8211B49AD70002BFEDB /* AppDelegate.m in Sources */,
+				C3C8C8491B53071A002BFEDB /* SCISCoursesTableViewController.m in Sources */,
 				C3C8C81E1B49AD70002BFEDB /* main.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

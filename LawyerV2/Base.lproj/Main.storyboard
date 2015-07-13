@@ -80,7 +80,7 @@
         <!--SCIS Programs-->
         <scene sceneID="6dK-Cd-uHk">
             <objects>
-                <tableViewController id="Xle-SY-lOP" sceneMemberID="viewController">
+                <tableViewController id="Xle-SY-lOP" customClass="SCISProgamsTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="FeN-dC-1vx">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -157,7 +157,7 @@
         <!--SCIS Course-->
         <scene sceneID="Pvp-CJ-8VZ">
             <objects>
-                <tableViewController id="gXR-Oy-cQF" sceneMemberID="viewController">
+                <tableViewController id="gXR-Oy-cQF" customClass="SCISCoursesTableViewController" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="22" sectionFooterHeight="22" id="OJi-WW-PBi">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="568"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

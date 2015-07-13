@@ -14,6 +14,36 @@
 
 @implementation AppDelegate
 
++(void)downloadDataFromURL:(NSURL *)url withCompletionHandler:(void (^)(NSData *))completionHandler {
+    //Instantiate
+    NSURLSessionConfiguration *configuration = [NSURLSessionConfiguration defaultSessionConfiguration];
+    
+    //Int Session Object
+    NSURLSession *session = [NSURLSession sessionWithConfiguration:configuration];
+    
+    //Create a data task object to perform the data
+    NSURLSessionDataTask *task = [session dataTaskWithURL:url completionHandler:^(NSData *data, NSURLResponse *response, NSError *error) {
+        if (error != nil) {
+            //IF any error occurs
+            NSLog(@"%@", [error localizedDescription]);
+        } else {
+            // If not errors
+            NSInteger HTTPStatusCode = [(NSHTTPURLResponse *)response statusCode];
+            
+            //If its other that 200
+            if (HTTPStatusCode != 200) {
+                NSLog(@"HTTP status code = %ld", (long)HTTPStatusCode);
+            }
+            
+            //Call the completion handler
+            [[NSOperationQueue mainQueue] addOperationWithBlock:^{
+                completionHandler(data);
+            }];
+        }
+    }];
+    // Resume Tast
+    [task resume];
+}
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
