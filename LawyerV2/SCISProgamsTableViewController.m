@@ -8,14 +8,16 @@
 
 #import "SCISProgamsTableViewController.h"
 #import "AppDelegate.h"
+#import "AFNetworking.h"
 
 @interface SCISProgamsTableViewController ()
 
 @property (nonatomic, strong) NSXMLParser *xmlParser;
 @property (nonatomic, strong) NSMutableArray *arrData;
-@property (nonatomic, strong) NSMutableDictionary *dictTempData;
+@property (nonatomic, strong) NSMutableDictionary *dictTempData; //current section
 @property (nonatomic, strong) NSMutableString *foundValue;
 @property (nonatomic, strong) NSString *currentElement;
+@property (nonatomic, strong) NSMutableDictionary *xmlWeather; //completed parse
 
 @end
 
@@ -25,23 +27,36 @@ NSMutableData *_responseData;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
-    
-    /* NSError *error  = nil;
-    NSURL *url = [NSURL URLWithString:@"http://regisscis.net/Regis2/webresources/regis2.program"];
-    NSMutableURLRequest *request = [NSMutableURLRequest requestWithURL:url];
-    [request setHTTPMethod:@"GET"];
-    NSURLResponse *response = nil;
-    NSData *data = [NSURLConnection sendSynchronousRequest:request returningResponse:&response error:&error];
-    
-    if (error == nil) {
-        //Parsing
-        NSLog(@"Connected");
-    } else {
-        NSLog(@"Error: %@", error);
-    }*/
-    
-    [self downloadData];
+    //Using xmlAfn for AFNetworking
+    //[self downloadData];
+    [self xmlAfn];
 }
+
+-(void)xmlAfn {
+    NSString *string = [NSString stringWithFormat:@"http://regisscis.net/Regis2/webresources/regis2.program"];
+    NSURL *url = [NSURL URLWithString:string];
+    NSURLRequest *request = [NSURLRequest requestWithURL:url];
+    
+    AFHTTPRequestOperation *operation = [[AFHTTPRequestOperation alloc] initWithRequest:request];
+    
+    //Make sure to set response
+    operation.responseSerializer = [AFXMLParserResponseSerializer serializer];
+    [operation setCompletionBlockWithSuccess:^(AFHTTPRequestOperation *operation, id responseData) {
+        NSXMLParser *XMLParser = (NSXMLParser *)responseData;
+        [XMLParser setShouldProcessNamespaces:YES];
+        NSLog(@"Found XML");
+        XMLParser.delegate = self;
+        [XMLParser parse];
+    } failure:^(AFHTTPRequestOperation *operation, NSError *error) {
+        UIAlertView *alertView = [[UIAlertView alloc] initWithTitle:@"Error retriving data" message:[error localizedDescription] delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil];
+        [alertView show];
+        NSLog(@"Lost XML");
+    }];
+
+    [operation start];
+}
+
+
 
 -(void)downloadData{
     //Preping the URL
@@ -64,7 +79,8 @@ NSMutableData *_responseData;
 -(void)parserDidStartDocument:(NSXMLParser *)parser{
     //Initialize array
     NSLog(@"Make Contact");
-    self.arrData = [[NSMutableArray alloc] init];
+   // self.arrData = [[NSMutableArray alloc] init];
+    self.xmlWeather = [NSMutableDictionary dictionary];
 }
 
 -(void)parserDidEndDocument:(NSXMLParser *)parser {
@@ -79,15 +95,20 @@ NSMutableData *_responseData;
 
 -(void)parser:(NSXMLParser *)parser didStartElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName attributes:(NSDictionary *)attributeDict {
     //If current element is same as selected element
-    if ([elementName isEqualToString:@"program"]) {
+   /* if ([elementName isEqualToString:@"program"]) {
         self.dictTempData = [[NSMutableDictionary alloc] init];
-    }
+    }*/
     //Keep same element
     self.currentElement = elementName;
+    
+    if ([qName isEqual:@"program"]) {
+        self.dictTempData = [NSMutableDictionary dictionary];
+    }
+    self.foundValue = [NSMutableString string];
 }
 
--(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {
-    if ([elementName isEqualToString:@"program"]) {
+-(void)parser:(NSXMLParser *)parser didEndElement:(NSString *)elementName namespaceURI:(NSString *)namespaceURI qualifiedName:(NSString *)qName {  //Edited out code from previous week
+    /*if ([elementName isEqualToString:@"program"]) {
         //If closing element equals string
         [self.arrData addObject:[[NSDictionary alloc] initWithDictionary:self.dictTempData]];
     } else if ([elementName isEqualToString:@"id"]) {
@@ -99,16 +120,52 @@ NSMutableData *_responseData;
     }
     
     //Clear info
-    [self.foundValue setString:@""];
+    [self.foundValue setString:@""];*/
+    
+    //1
+    if ([qName isEqualToString:@"current_condition"] || [qName isEqualToString:@"request"]) {
+        self.xmlWeather[qName] = @[self.dictTempData];
+        self.dictTempData = nil;
+    }
+    //2
+    else if ([qName isEqualToString:@"program"]) {
+        NSMutableArray *array = self.xmlWeather[@"program"] ?: [NSMutableArray array];
+        
+        [array addObject:self.dictTempData];
+        
+        self.xmlWeather[@"program"] = array;
+        
+        self.dictTempData = nil;
+    }
+    //3
+    else if ([qName isEqualToString:@"id"] || [qName isEqualToString:@"name"]) {
+    [self.dictTempData setObject:[NSString stringWithString:self.foundValue] forKey:@"id"];
+        NSDictionary *dictionary = @{@"value": self.foundValue};
+        NSArray *array = @[dictionary];
+        self.dictTempData[qName] = array;
+        //Able to see parsed data but haven't found proper way to display on Table
+        NSLog(@"%@", _foundValue);
+    }
+    //4
+    else if (qName) {
+        self.dictTempData[qName] = self.foundValue;
+    }
+    self.currentElement = nil;
 }
+
 
 -(void)parser:(NSXMLParser *)parser foundCharacters:(NSString *)string {
     //Store found characters
+    if (!self.currentElement)
+        return;
     if ([self.currentElement isEqualToString:@"name"] || [self.currentElement isEqualToString:@"id"]) {
         if (![string isEqualToString:@"\n"]) {
             [self.foundValue appendString:string];
         }
     }
+    
+    
+    [self.foundValue appendFormat:@"%@", string];
 }
 
 - (void)didReceiveMemoryWarning {

@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		3106F82B88703EE3D3AAF8E3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A96052A854611760D64FA36E /* libPods.a */; };
 		C3C8C81E1B49AD70002BFEDB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C8C81D1B49AD70002BFEDB /* main.m */; };
 		C3C8C8211B49AD70002BFEDB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C8C8201B49AD70002BFEDB /* AppDelegate.m */; };
 		C3C8C8241B49AD70002BFEDB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C8C8231B49AD70002BFEDB /* ViewController.m */; };
@@ -30,6 +31,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		7EAA743C4673C9D8DB565D52 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
+		A96052A854611760D64FA36E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3C8C8181B49AD70002BFEDB /* LawyerV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LawyerV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3C8C81C1B49AD70002BFEDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3C8C81D1B49AD70002BFEDB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -49,6 +52,7 @@
 		C3C8C8451B5199F1002BFEDB /* SCISProgamsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCISProgamsTableViewController.m; sourceTree = "<group>"; };
 		C3C8C8471B53071A002BFEDB /* SCISCoursesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCISCoursesTableViewController.h; sourceTree = "<group>"; };
 		C3C8C8481B53071A002BFEDB /* SCISCoursesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCISCoursesTableViewController.m; sourceTree = "<group>"; };
+		E47A3C889D909A3EDB716F70 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +60,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3106F82B88703EE3D3AAF8E3 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -69,12 +74,23 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		4BE8B904AEA882FBD3C56C10 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				7EAA743C4673C9D8DB565D52 /* Pods.debug.xcconfig */,
+				E47A3C889D909A3EDB716F70 /* Pods.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 		C3C8C80F1B49AD6F002BFEDB = {
 			isa = PBXGroup;
 			children = (
 				C3C8C81A1B49AD70002BFEDB /* LawyerV2 */,
 				C3C8C8341B49AD70002BFEDB /* LawyerV2Tests */,
 				C3C8C8191B49AD70002BFEDB /* Products */,
+				4BE8B904AEA882FBD3C56C10 /* Pods */,
+				D79FE2A027DAC33D85C5E16F /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -134,6 +150,14 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		D79FE2A027DAC33D85C5E16F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A96052A854611760D64FA36E /* libPods.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -141,9 +165,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = C3C8C83B1B49AD70002BFEDB /* Build configuration list for PBXNativeTarget "LawyerV2" */;
 			buildPhases = (
+				7B7D240203D7B9BD50737167 /* Check Pods Manifest.lock */,
 				C3C8C8141B49AD70002BFEDB /* Sources */,
 				C3C8C8151B49AD70002BFEDB /* Frameworks */,
 				C3C8C8161B49AD70002BFEDB /* Resources */,
+				CC5659E01338B958D568C416 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -228,6 +254,39 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		7B7D240203D7B9BD50737167 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		CC5659E01338B958D568C416 /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods/Pods-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		C3C8C8141B49AD70002BFEDB /* Sources */ = {
@@ -363,6 +422,7 @@
 		};
 		C3C8C83C1B49AD70002BFEDB /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 7EAA743C4673C9D8DB565D52 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LawyerV2/Info.plist;
@@ -373,6 +433,7 @@
 		};
 		C3C8C83D1B49AD70002BFEDB /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E47A3C889D909A3EDB716F70 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = LawyerV2/Info.plist;
@@ -434,6 +495,7 @@
 				C3C8C83D1B49AD70002BFEDB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		C3C8C83E1B49AD70002BFEDB /* Build configuration list for PBXNativeTarget "LawyerV2Tests" */ = {
 			isa = XCConfigurationList;
@@ -442,6 +504,7 @@
 				C3C8C8401B49AD70002BFEDB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};

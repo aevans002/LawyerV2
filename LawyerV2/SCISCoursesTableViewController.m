@@ -8,6 +8,7 @@
 
 #import "SCISCoursesTableViewController.h"
 #import "AppDelegate.h"
+#import "AFNetworking.h"
 
 @interface SCISCoursesTableViewController ()
 
