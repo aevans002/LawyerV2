@@ -7,6 +7,9 @@
 //
 
 #import "AppDelegate.h"
+#import "Program.h"
+#import "RestKit.h"
+
 
 @interface AppDelegate ()
 
@@ -46,8 +49,41 @@
 }
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
-    // Override point for customization after application launch.
+    [self initializeRestKit];
     return YES;
+}
+
+- (void)initializeRestKit {
+    //tracing
+    RKLogConfigureByName("RestKit/Network", RKLogLevelTrace);
+    RKLogConfigureByName("RestKit/ObjectMapping", RKLogLevelTrace);
+    //init object manager
+    RKObjectManager *manager = [RKObjectManager managerWithBaseURL:[NSURL URLWithString:@"http://regisscis.net/Regis2/webresources/regis2.program"]];
+    [manager setRequestSerializationMIMEType:RKMIMETypeXML];
+    [manager setAcceptHeaderWithMIMEType:@"application/xml"];
+    
+    
+    [[RKObjectManager sharedManager] getObjectsAtPath:@"regis2.program" parameters:nil success:^(RKObjectRequestOperation *operation, RKMappingResult *mappingResult) { NSLog(@"I worked!"); } failure:^(RKObjectRequestOperation *operation, NSError *error) { NSLog(@"It failed"); }];
+    
+    
+    NSManagedObjectModel *managedObjectModel = [NSManagedObjectModel mergedModelFromBundles:nil];
+    RKManagedObjectStore *managedObjectStore = [[RKManagedObjectStore alloc] initWithManagedObjectModel:managedObjectModel];
+    manager.managedObjectStore = managedObjectStore;
+    
+    RKEntityMapping *programMapping = [RKEntityMapping mappingForEntityForName:NSStringFromClass([Program class]) inManagedObjectStore:manager.managedObjectStore];
+    programMapping.identificationAttributes = @[@"id"];
+    [programMapping addAttributeMappingsFromDictionary:@{@"name" : @"name"}];
+    
+    //create the persistence store
+    [managedObjectStore createPersistentStoreCoordinator];
+    NSString *storePath = [RKApplicationDataDirectory() stringByAppendingPathComponent:@"SCIS.sqlite"];
+    NSLog(@"Database created");
+    NSError *error;
+    NSPersistentStore *persistentStore = [managedObjectStore addSQLitePersistentStoreAtPath:storePath fromSeedDatabaseAtPath:nil withConfiguration:nil options:@{NSMigratePersistentStoresAutomaticallyOption:@YES, NSInferMappingModelAutomaticallyOption:@YES} error:&error];
+    NSAssert(persistentStore, @"Failed persisten store: %@", error);
+    [managedObjectStore createManagedObjectContexts];
+    
+    managedObjectStore.managedObjectCache = [[RKInMemoryManagedObjectCache alloc] initWithManagedObjectContext:managedObjectStore.persistentStoreManagedObjectContext];
 }
 
 - (void)applicationWillResignActive:(UIApplication *)application {

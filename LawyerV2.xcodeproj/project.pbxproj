@@ -18,6 +18,17 @@
 		C3C8C8431B49B575002BFEDB /* SecondViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C8C8421B49B575002BFEDB /* SecondViewController.m */; };
 		C3C8C8461B5199F1002BFEDB /* SCISProgamsTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C8C8451B5199F1002BFEDB /* SCISProgamsTableViewController.m */; };
 		C3C8C8491B53071A002BFEDB /* SCISCoursesTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C8C8481B53071A002BFEDB /* SCISCoursesTableViewController.m */; };
+		C3DDD4971B649FC400E65588 /* libPods-RestKit.a in Frameworks */ = {isa = PBXBuildFile; fileRef = C3DDD4901B649DE400E65588 /* libPods-RestKit.a */; };
+		C3DDD4991B649FEA00E65588 /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3DDD4981B649FEA00E65588 /* CFNetwork.framework */; };
+		C3DDD49B1B649FF700E65588 /* CoreData.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3DDD49A1B649FF700E65588 /* CoreData.framework */; };
+		C3DDD49D1B64A01A00E65588 /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3DDD49C1B64A01A00E65588 /* MobileCoreServices.framework */; };
+		C3DDD49F1B64A02B00E65588 /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3DDD49E1B64A02B00E65588 /* Security.framework */; };
+		C3DDD4A11B64A03900E65588 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3DDD4A01B64A03900E65588 /* SystemConfiguration.framework */; };
+		C3DDD4A31B64A04600E65588 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3DDD4A21B64A04600E65588 /* QuartzCore.framework */; };
+		C3DDD4A51B64A05500E65588 /* libxml2.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C3DDD4A41B64A05500E65588 /* libxml2.dylib */; };
+		C3DDD4A81B64A75300E65588 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C3DDD4A61B64A75300E65588 /* Model.xcdatamodeld */; };
+		C3DDD4AB1B64A8CB00E65588 /* Program.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DDD4AA1B64A8CB00E65588 /* Program.m */; };
+		C3DDD4AE1B65D46D00E65588 /* Programs.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DDD4AD1B65D46D00E65588 /* Programs.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -27,6 +38,62 @@
 			proxyType = 1;
 			remoteGlobalIDString = C3C8C8171B49AD70002BFEDB;
 			remoteInfo = LawyerV2;
+		};
+		C3DDD4871B649DE400E65588 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3DDD47D1B649DE400E65588 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = DBB5552969A4C6E86B1F66A6;
+			remoteInfo = Pods;
+		};
+		C3DDD4891B649DE400E65588 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3DDD47D1B649DE400E65588 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 78A90ACE6ADE07CDEE0D0F14;
+			remoteInfo = "Pods-AFNetworking";
+		};
+		C3DDD48B1B649DE400E65588 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3DDD47D1B649DE400E65588 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 5D12438A60E27A1081788FFB;
+			remoteInfo = "Pods-ISO8601DateFormatterValueTransformer";
+		};
+		C3DDD48D1B649DE400E65588 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3DDD47D1B649DE400E65588 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 100073BA4B2E1D21FACC7B02;
+			remoteInfo = "Pods-RKValueTransformers";
+		};
+		C3DDD48F1B649DE400E65588 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3DDD47D1B649DE400E65588 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 0DEC5E7221A2934C2158D709;
+			remoteInfo = "Pods-RestKit";
+		};
+		C3DDD4911B649DE400E65588 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3DDD47D1B649DE400E65588 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 180FC1D3AB7E69BCB190D999;
+			remoteInfo = "Pods-SOCKit";
+		};
+		C3DDD4931B649DE400E65588 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3DDD47D1B649DE400E65588 /* Pods.xcodeproj */;
+			proxyType = 2;
+			remoteGlobalIDString = 60D8B921EA5CFC2458D1269F;
+			remoteInfo = "Pods-TransitionKit";
+		};
+		C3DDD4951B649F9300E65588 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = C3DDD47D1B649DE400E65588 /* Pods.xcodeproj */;
+			proxyType = 1;
+			remoteGlobalIDString = AFEC1E0ED5114EFD55BFBB95;
+			remoteInfo = "Pods-RestKit";
 		};
 /* End PBXContainerItemProxy section */
 
@@ -52,6 +119,19 @@
 		C3C8C8451B5199F1002BFEDB /* SCISProgamsTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCISProgamsTableViewController.m; sourceTree = "<group>"; };
 		C3C8C8471B53071A002BFEDB /* SCISCoursesTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SCISCoursesTableViewController.h; sourceTree = "<group>"; };
 		C3C8C8481B53071A002BFEDB /* SCISCoursesTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SCISCoursesTableViewController.m; sourceTree = "<group>"; };
+		C3DDD47D1B649DE400E65588 /* Pods.xcodeproj */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.pb-project"; name = Pods.xcodeproj; path = Pods/Pods.xcodeproj; sourceTree = "<group>"; };
+		C3DDD4981B649FEA00E65588 /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		C3DDD49A1B649FF700E65588 /* CoreData.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreData.framework; path = System/Library/Frameworks/CoreData.framework; sourceTree = SDKROOT; };
+		C3DDD49C1B64A01A00E65588 /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		C3DDD49E1B64A02B00E65588 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		C3DDD4A01B64A03900E65588 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		C3DDD4A21B64A04600E65588 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		C3DDD4A41B64A05500E65588 /* libxml2.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libxml2.dylib; path = usr/lib/libxml2.dylib; sourceTree = SDKROOT; };
+		C3DDD4A71B64A75300E65588 /* Model.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = Model.xcdatamodel; sourceTree = "<group>"; };
+		C3DDD4A91B64A8CB00E65588 /* Program.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Program.h; sourceTree = "<group>"; };
+		C3DDD4AA1B64A8CB00E65588 /* Program.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Program.m; sourceTree = "<group>"; };
+		C3DDD4AC1B65D46D00E65588 /* Programs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Programs.h; sourceTree = "<group>"; };
+		C3DDD4AD1B65D46D00E65588 /* Programs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Programs.m; sourceTree = "<group>"; };
 		E47A3C889D909A3EDB716F70 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -60,6 +140,14 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3DDD4A51B64A05500E65588 /* libxml2.dylib in Frameworks */,
+				C3DDD4A31B64A04600E65588 /* QuartzCore.framework in Frameworks */,
+				C3DDD4A11B64A03900E65588 /* SystemConfiguration.framework in Frameworks */,
+				C3DDD49F1B64A02B00E65588 /* Security.framework in Frameworks */,
+				C3DDD49D1B64A01A00E65588 /* MobileCoreServices.framework in Frameworks */,
+				C3DDD49B1B649FF700E65588 /* CoreData.framework in Frameworks */,
+				C3DDD4991B649FEA00E65588 /* CFNetwork.framework in Frameworks */,
+				C3DDD4971B649FC400E65588 /* libPods-RestKit.a in Frameworks */,
 				3106F82B88703EE3D3AAF8E3 /* libPods.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -86,6 +174,10 @@
 		C3C8C80F1B49AD6F002BFEDB = {
 			isa = PBXGroup;
 			children = (
+				C3DDD4A61B64A75300E65588 /* Model.xcdatamodeld */,
+				C3DDD4A91B64A8CB00E65588 /* Program.h */,
+				C3DDD4AA1B64A8CB00E65588 /* Program.m */,
+				C3DDD47D1B649DE400E65588 /* Pods.xcodeproj */,
 				C3C8C81A1B49AD70002BFEDB /* LawyerV2 */,
 				C3C8C8341B49AD70002BFEDB /* LawyerV2Tests */,
 				C3C8C8191B49AD70002BFEDB /* Products */,
@@ -120,6 +212,8 @@
 				C3C8C8281B49AD70002BFEDB /* Images.xcassets */,
 				C3C8C82A1B49AD70002BFEDB /* LaunchScreen.xib */,
 				C3C8C81B1B49AD70002BFEDB /* Supporting Files */,
+				C3DDD4AC1B65D46D00E65588 /* Programs.h */,
+				C3DDD4AD1B65D46D00E65588 /* Programs.m */,
 			);
 			path = LawyerV2;
 			sourceTree = "<group>";
@@ -150,9 +244,30 @@
 			name = "Supporting Files";
 			sourceTree = "<group>";
 		};
+		C3DDD47E1B649DE400E65588 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				C3DDD4881B649DE400E65588 /* libPods.a */,
+				C3DDD48A1B649DE400E65588 /* libPods-AFNetworking.a */,
+				C3DDD48C1B649DE400E65588 /* libPods-ISO8601DateFormatterValueTransformer.a */,
+				C3DDD48E1B649DE400E65588 /* libPods-RKValueTransformers.a */,
+				C3DDD4901B649DE400E65588 /* libPods-RestKit.a */,
+				C3DDD4921B649DE400E65588 /* libPods-SOCKit.a */,
+				C3DDD4941B649DE400E65588 /* libPods-TransitionKit.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
 		D79FE2A027DAC33D85C5E16F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C3DDD4A41B64A05500E65588 /* libxml2.dylib */,
+				C3DDD4A21B64A04600E65588 /* QuartzCore.framework */,
+				C3DDD4A01B64A03900E65588 /* SystemConfiguration.framework */,
+				C3DDD49E1B64A02B00E65588 /* Security.framework */,
+				C3DDD49C1B64A01A00E65588 /* MobileCoreServices.framework */,
+				C3DDD49A1B649FF700E65588 /* CoreData.framework */,
+				C3DDD4981B649FEA00E65588 /* CFNetwork.framework */,
 				A96052A854611760D64FA36E /* libPods.a */,
 			);
 			name = Frameworks;
@@ -174,6 +289,7 @@
 			buildRules = (
 			);
 			dependencies = (
+				C3DDD4961B649F9300E65588 /* PBXTargetDependency */,
 			);
 			name = LawyerV2;
 			productName = LawyerV2;
@@ -227,6 +343,12 @@
 			mainGroup = C3C8C80F1B49AD6F002BFEDB;
 			productRefGroup = C3C8C8191B49AD70002BFEDB /* Products */;
 			projectDirPath = "";
+			projectReferences = (
+				{
+					ProductGroup = C3DDD47E1B649DE400E65588 /* Products */;
+					ProjectRef = C3DDD47D1B649DE400E65588 /* Pods.xcodeproj */;
+				},
+			);
 			projectRoot = "";
 			targets = (
 				C3C8C8171B49AD70002BFEDB /* LawyerV2 */,
@@ -234,6 +356,58 @@
 			);
 		};
 /* End PBXProject section */
+
+/* Begin PBXReferenceProxy section */
+		C3DDD4881B649DE400E65588 /* libPods.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = libPods.a;
+			remoteRef = C3DDD4871B649DE400E65588 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C3DDD48A1B649DE400E65588 /* libPods-AFNetworking.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libPods-AFNetworking.a";
+			remoteRef = C3DDD4891B649DE400E65588 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C3DDD48C1B649DE400E65588 /* libPods-ISO8601DateFormatterValueTransformer.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libPods-ISO8601DateFormatterValueTransformer.a";
+			remoteRef = C3DDD48B1B649DE400E65588 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C3DDD48E1B649DE400E65588 /* libPods-RKValueTransformers.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libPods-RKValueTransformers.a";
+			remoteRef = C3DDD48D1B649DE400E65588 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C3DDD4901B649DE400E65588 /* libPods-RestKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libPods-RestKit.a";
+			remoteRef = C3DDD48F1B649DE400E65588 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C3DDD4921B649DE400E65588 /* libPods-SOCKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libPods-SOCKit.a";
+			remoteRef = C3DDD4911B649DE400E65588 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+		C3DDD4941B649DE400E65588 /* libPods-TransitionKit.a */ = {
+			isa = PBXReferenceProxy;
+			fileType = archive.ar;
+			path = "libPods-TransitionKit.a";
+			remoteRef = C3DDD4931B649DE400E65588 /* PBXContainerItemProxy */;
+			sourceTree = BUILT_PRODUCTS_DIR;
+		};
+/* End PBXReferenceProxy section */
 
 /* Begin PBXResourcesBuildPhase section */
 		C3C8C8161B49AD70002BFEDB /* Resources */ = {
@@ -296,6 +470,9 @@
 				C3C8C8431B49B575002BFEDB /* SecondViewController.m in Sources */,
 				C3C8C8461B5199F1002BFEDB /* SCISProgamsTableViewController.m in Sources */,
 				C3C8C8241B49AD70002BFEDB /* ViewController.m in Sources */,
+				C3DDD4A81B64A75300E65588 /* Model.xcdatamodeld in Sources */,
+				C3DDD4AE1B65D46D00E65588 /* Programs.m in Sources */,
+				C3DDD4AB1B64A8CB00E65588 /* Program.m in Sources */,
 				C3C8C8211B49AD70002BFEDB /* AppDelegate.m in Sources */,
 				C3C8C8491B53071A002BFEDB /* SCISCoursesTableViewController.m in Sources */,
 				C3C8C81E1B49AD70002BFEDB /* main.m in Sources */,
@@ -317,6 +494,11 @@
 			isa = PBXTargetDependency;
 			target = C3C8C8171B49AD70002BFEDB /* LawyerV2 */;
 			targetProxy = C3C8C8321B49AD70002BFEDB /* PBXContainerItemProxy */;
+		};
+		C3DDD4961B649F9300E65588 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = "Pods-RestKit";
+			targetProxy = C3DDD4951B649F9300E65588 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -425,6 +607,7 @@
 			baseConfigurationReference = 7EAA743C4673C9D8DB565D52 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"HEADER_SEARCH_PATHS[arch=*]" = "\"build/Debug-iphoneos/../../Headers\"";
 				INFOPLIST_FILE = LawyerV2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -436,6 +619,7 @@
 			baseConfigurationReference = E47A3C889D909A3EDB716F70 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				"HEADER_SEARCH_PATHS[arch=*]" = "\"build/Debug-iphoneos/../../Headers\"";
 				INFOPLIST_FILE = LawyerV2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -507,6 +691,19 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCVersionGroup section */
+		C3DDD4A61B64A75300E65588 /* Model.xcdatamodeld */ = {
+			isa = XCVersionGroup;
+			children = (
+				C3DDD4A71B64A75300E65588 /* Model.xcdatamodel */,
+			);
+			currentVersion = C3DDD4A71B64A75300E65588 /* Model.xcdatamodel */;
+			path = Model.xcdatamodeld;
+			sourceTree = "<group>";
+			versionGroupType = wrapper.xcdatamodel;
+		};
+/* End XCVersionGroup section */
 	};
 	rootObject = C3C8C8101B49AD6F002BFEDB /* Project object */;
 }

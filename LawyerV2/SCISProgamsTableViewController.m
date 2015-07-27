@@ -9,6 +9,12 @@
 #import "SCISProgamsTableViewController.h"
 #import "AppDelegate.h"
 #import "AFNetworking.h"
+#import "RestKit.h"
+#import "Program.h"
+
+#define kCLIENTID @"Your ID"
+#define kCLIENTNAME @"Your Name"
+
 
 @interface SCISProgamsTableViewController ()
 
@@ -19,21 +25,64 @@
 @property (nonatomic, strong) NSString *currentElement;
 @property (nonatomic, strong) NSMutableDictionary *xmlWeather; //completed parse
 
+
 @end
 
 @implementation SCISProgamsTableViewController
-
+@synthesize fetchedResultsController = _fetchedResultsController;
 NSMutableData *_responseData;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
     //Using xmlAfn for AFNetworking
     //[self downloadData];
-    [self xmlAfn];
+    //[self xmlAfn];
 }
 
+- (NSFetchedResultsController *)fetchedResultsController{
+    if (!_fetchedResultsController) {
+        NSLog(@"Fetched Stuff");
+        NSFetchRequest *fetchRequest = [NSFetchRequest fetchRequestWithEntityName:NSStringFromClass([Program class])];
+        fetchRequest.sortDescriptors = @[[NSSortDescriptor sortDescriptorWithKey:@"program.name" ascending:YES]];
+        
+        self.fetchedResultsController = [[NSFetchedResultsController alloc] initWithFetchRequest:fetchRequest managedObjectContext:[RKManagedObjectStore defaultStore].mainQueueManagedObjectContext sectionNameKeyPath:@"program.name" cacheName:@"Program"];
+        self.fetchedResultsController.delegate = self;
+        
+        NSError *error;
+        [self.fetchedResultsController performFetch:&error];
+        NSLog(@"%@",[self.fetchedResultsController fetchedObjects]);
+        NSAssert(!error, @"Error performing fetch request: %@", error);
+        
+    }
+    return _fetchedResultsController;
+}
+
+/*-(void)configureRestKit {
+    //init AFNet
+    NSURL *baseURL = [NSURL URLWithString:@"http://regisscis.net/Regis2/webresources/regis2.program"];
+    AFHTTPClient *client = [[AFHTTPClient alloc] initWithBaseURL:baseURL];
+    //init restkit
+    RKObjectManager *objectManager = [[RKObjectManager alloc] initWithHTTPClient:client];
+    //setup object mappings
+    RKObjectMapping *venueMapping = [RKObjectMapping mappingForClass:[Program class]];
+    [venueMapping addAttributeMappingsFromArray:@[@"id"]];
+    //register mappings
+    RKResponseDescriptor *responseDescriptor = [RKResponseDescriptor responseDescriptorWithMapping:venueMapping method:RKRequestMethodGET pathPattern:@"program" keyPath:@"program.name" statusCodes:[NSIndexSet indexSetWithIndex:200]];
+                                                [objectManager addResponseDescriptor:responseDescriptor];
+}
+
+-(void) loadPrograms {
+    NSString *clientID = kCLIENTID;
+    NSString *clientName = kCLIENTNAME;
+    
+    NSDictionary *queryParams = @{@"client_id" : clientID,
+                                  @"client_name" : clientName};
+    
+    
+}*/
+
 -(void)xmlAfn {
-    NSString *string = [NSString stringWithFormat:@"http://regisscis.net/Regis2/webresources/regis2.program"];
+ /*   NSString *string = [NSString stringWithFormat:@"http://regisscis.net/Regis2/webresources/regis2.program"];
     NSURL *url = [NSURL URLWithString:string];
     NSURLRequest *request = [NSURLRequest requestWithURL:url];
     
@@ -53,7 +102,7 @@ NSMutableData *_responseData;
         NSLog(@"Lost XML");
     }];
 
-    [operation start];
+    [operation start];*/
 }
 
 
