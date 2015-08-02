@@ -12,6 +12,11 @@
 
 - (IBAction)exitView:(UIStoryboardSegue *)sender;
 
+@property (weak, nonatomic) IBOutlet UIButton *faceButton;
+@property (weak, nonatomic) IBOutlet UIButton *twitButton;
+
+- (IBAction)openFace:(id)sender;
+- (IBAction)openTwit:(id)sender;
 
 @end
 

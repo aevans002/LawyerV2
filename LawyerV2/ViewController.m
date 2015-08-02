@@ -7,6 +7,7 @@
 //
 
 #import "ViewController.h"
+#import <Social/Social.h>
 
 @interface ViewController ()
 
@@ -28,4 +29,16 @@
     
 }
 
+
+
+- (IBAction)openFace:(id)sender {
+    SLComposeViewController *view = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeFacebook];
+    [self presentViewController:view animated:YES completion:nil];
+    
+}
+
+- (IBAction)openTwit:(id)sender {
+    SLComposeViewController *view = [SLComposeViewController composeViewControllerForServiceType:SLServiceTypeTwitter];
+    [self presentViewController:view animated:YES completion:nil];
+}
 @end

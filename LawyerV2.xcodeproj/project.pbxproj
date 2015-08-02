@@ -29,6 +29,7 @@
 		C3DDD4A81B64A75300E65588 /* Model.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = C3DDD4A61B64A75300E65588 /* Model.xcdatamodeld */; };
 		C3DDD4AB1B64A8CB00E65588 /* Program.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DDD4AA1B64A8CB00E65588 /* Program.m */; };
 		C3DDD4AE1B65D46D00E65588 /* Programs.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DDD4AD1B65D46D00E65588 /* Programs.m */; };
+		C3DDD4B01B6D2CC000E65588 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3DDD4AF1B6D2CC000E65588 /* Social.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -132,6 +133,7 @@
 		C3DDD4AA1B64A8CB00E65588 /* Program.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Program.m; sourceTree = "<group>"; };
 		C3DDD4AC1B65D46D00E65588 /* Programs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Programs.h; sourceTree = "<group>"; };
 		C3DDD4AD1B65D46D00E65588 /* Programs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Programs.m; sourceTree = "<group>"; };
+		C3DDD4AF1B6D2CC000E65588 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		E47A3C889D909A3EDB716F70 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -140,6 +142,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3DDD4B01B6D2CC000E65588 /* Social.framework in Frameworks */,
 				C3DDD4A51B64A05500E65588 /* libxml2.dylib in Frameworks */,
 				C3DDD4A31B64A04600E65588 /* QuartzCore.framework in Frameworks */,
 				C3DDD4A11B64A03900E65588 /* SystemConfiguration.framework in Frameworks */,
@@ -261,6 +264,7 @@
 		D79FE2A027DAC33D85C5E16F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C3DDD4AF1B6D2CC000E65588 /* Social.framework */,
 				C3DDD4A41B64A05500E65588 /* libxml2.dylib */,
 				C3DDD4A21B64A04600E65588 /* QuartzCore.framework */,
 				C3DDD4A01B64A03900E65588 /* SystemConfiguration.framework */,
