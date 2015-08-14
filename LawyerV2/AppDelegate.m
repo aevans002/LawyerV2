@@ -11,11 +11,16 @@
 #import "RestKit.h"
 
 
+
 @interface AppDelegate ()
+#define kFILENAME @"mydocument.dox"
 
 @end
 
+
 @implementation AppDelegate
+@synthesize doc = _doc;
+@synthesize query = _query;
 
 +(void)downloadDataFromURL:(NSURL *)url withCompletionHandler:(void (^)(NSData *))completionHandler {
     //Instantiate
@@ -50,7 +55,63 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     [self initializeRestKit];
+    NSURL *ubiq = [[NSFileManager defaultManager]
+                   URLForUbiquityContainerIdentifier:nil];
+    if(ubiq) {
+        NSLog(@"iCloud access at %@", ubiq);
+        [self loadDocument];
+    } else {
+        NSLog(@"No iCloud access");
+    }
     return YES;
+}
+
+- (void)loadDocument {
+    NSMetadataQuery *query = [[NSMetadataQuery alloc] init];
+    _query = query;
+    [query setSearchScopes:[NSArray arrayWithObjects:NSMetadataQueryUbiquitousDocumentsScope]];
+    NSPredicate *pred = [NSPredicate predicateWithFormat:@"%K == %@", NSMetadataItemFSNameKey, kFILENAME];
+    [query setPredicate:pred];
+    [[NSNotificationCenter defaultCenter]
+     addObserver:self selector:@selector(queryDidFinishGathering:) name:NSMetadataQueryDidFinishGatheringNotification object:query];
+    [query startQuery];
+}
+
+-(void)loadData:(NSMetadataQuery *)query {
+    if ([query resultCount] == 1) {
+        NSMetadataItem *item = [query resultAtIndex:0];
+        NSURL *url = [item valueForAttribute:NSMetadataItemURLKey];
+        Note *doc = [[Note alloc] initWithFileURL:url];
+        self.doc = doc;
+        [self.doc openWithCompletionHandler:^(BOOL success) {
+            if (success) {
+                NSLog(@"iCloud opended note");
+            } else {
+                NSLog(@"failed opening document from iCloud");
+                NSURL *ubiq = [[NSFileManager defaultManager]
+                               URLForUbiquityContainerIdentifier:nil];
+                NSURL *ubiquitousPackage = [[ubiq URLByAppendingPathComponent:@"Documents"] URLByAppendingPathComponent:kFILENAME];
+                
+                Note *doc = [[Note alloc] initWithFileURL:ubiquitousPackage];
+                self.doc = doc;
+                
+                [doc saveToURL:[doc fileURL] forSaveOperation:UIDocumentSaveForCreating completionHandler:^(BOOL success) {
+                    NSLog(@"new document created/opened");
+                }];
+            }
+        }];
+    }
+}
+
+-(void)queryDidFinishGathering:(NSNotification *)notification {
+    NSMetadataQuery *query = [notification object];
+    [query disableUpdates];
+    [query stopQuery];
+    
+    [[NSNotificationCenter defaultCenter] removeObserver:self
+                                                    name:NSMetadataQueryDidFinishGatheringNotification object:query];
+    _query = nil;
+    [self loadData:query];
 }
 
 - (void)initializeRestKit {

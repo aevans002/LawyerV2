@@ -8,10 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		3106F82B88703EE3D3AAF8E3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A96052A854611760D64FA36E /* libPods.a */; };
+		C34C67341B783CC200BC49E7 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C34C67331B783CC200BC49E7 /* CloudKit.framework */; };
 		C3C8C81E1B49AD70002BFEDB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C8C81D1B49AD70002BFEDB /* main.m */; };
 		C3C8C8211B49AD70002BFEDB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C8C8201B49AD70002BFEDB /* AppDelegate.m */; };
 		C3C8C8241B49AD70002BFEDB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C8C8231B49AD70002BFEDB /* ViewController.m */; };
-		C3C8C8271B49AD70002BFEDB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3C8C8251B49AD70002BFEDB /* Main.storyboard */; };
 		C3C8C8291B49AD70002BFEDB /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C3C8C8281B49AD70002BFEDB /* Images.xcassets */; };
 		C3C8C82C1B49AD70002BFEDB /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = C3C8C82A1B49AD70002BFEDB /* LaunchScreen.xib */; };
 		C3C8C8381B49AD70002BFEDB /* LawyerV2Tests.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C8C8371B49AD70002BFEDB /* LawyerV2Tests.m */; };
@@ -30,6 +30,11 @@
 		C3DDD4AB1B64A8CB00E65588 /* Program.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DDD4AA1B64A8CB00E65588 /* Program.m */; };
 		C3DDD4AE1B65D46D00E65588 /* Programs.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DDD4AD1B65D46D00E65588 /* Programs.m */; };
 		C3DDD4B01B6D2CC000E65588 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3DDD4AF1B6D2CC000E65588 /* Social.framework */; };
+		C3DE91B41B784A330083AC33 /* PostClientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DE91B31B784A330083AC33 /* PostClientViewController.m */; };
+		C3DE91BD1B784A7B0083AC33 /* ClientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DE91BC1B784A7B0083AC33 /* ClientViewController.m */; };
+		C3DE91C31B79AEC10083AC33 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C3DE91C21B79AEC10083AC33 /* Main.storyboard */; };
+		C3DE91C61B79BB6F0083AC33 /* PreClientViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DE91C51B79BB6F0083AC33 /* PreClientViewController.m */; };
+		C3DE91C91B7D7AE10083AC33 /* Note.m in Sources */ = {isa = PBXBuildFile; fileRef = C3DE91C81B7D7AE10083AC33 /* Note.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -101,6 +106,8 @@
 /* Begin PBXFileReference section */
 		7EAA743C4673C9D8DB565D52 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A96052A854611760D64FA36E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C34C67321B783C7F00BC49E7 /* LawyerV2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = LawyerV2.entitlements; sourceTree = "<group>"; };
+		C34C67331B783CC200BC49E7 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		C3C8C8181B49AD70002BFEDB /* LawyerV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LawyerV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3C8C81C1B49AD70002BFEDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3C8C81D1B49AD70002BFEDB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -108,7 +115,6 @@
 		C3C8C8201B49AD70002BFEDB /* AppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = AppDelegate.m; sourceTree = "<group>"; };
 		C3C8C8221B49AD70002BFEDB /* ViewController.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = ViewController.h; sourceTree = "<group>"; };
 		C3C8C8231B49AD70002BFEDB /* ViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = ViewController.m; sourceTree = "<group>"; };
-		C3C8C8261B49AD70002BFEDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C3C8C8281B49AD70002BFEDB /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		C3C8C82B1B49AD70002BFEDB /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		C3C8C8311B49AD70002BFEDB /* LawyerV2Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LawyerV2Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,6 +140,15 @@
 		C3DDD4AC1B65D46D00E65588 /* Programs.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Programs.h; sourceTree = "<group>"; };
 		C3DDD4AD1B65D46D00E65588 /* Programs.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Programs.m; sourceTree = "<group>"; };
 		C3DDD4AF1B6D2CC000E65588 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
+		C3DE91B21B784A330083AC33 /* PostClientViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PostClientViewController.h; path = ../PostClientViewController.h; sourceTree = "<group>"; };
+		C3DE91B31B784A330083AC33 /* PostClientViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PostClientViewController.m; path = ../PostClientViewController.m; sourceTree = "<group>"; };
+		C3DE91BB1B784A7B0083AC33 /* ClientViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ClientViewController.h; sourceTree = "<group>"; };
+		C3DE91BC1B784A7B0083AC33 /* ClientViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ClientViewController.m; sourceTree = "<group>"; };
+		C3DE91C21B79AEC10083AC33 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		C3DE91C41B79BB6F0083AC33 /* PreClientViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PreClientViewController.h; sourceTree = "<group>"; };
+		C3DE91C51B79BB6F0083AC33 /* PreClientViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = PreClientViewController.m; sourceTree = "<group>"; };
+		C3DE91C71B7D7AE10083AC33 /* Note.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Note.h; sourceTree = "<group>"; };
+		C3DE91C81B7D7AE10083AC33 /* Note.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Note.m; sourceTree = "<group>"; };
 		E47A3C889D909A3EDB716F70 /* Pods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.release.xcconfig; path = "Pods/Target Support Files/Pods/Pods.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -149,6 +164,7 @@
 				C3DDD49F1B64A02B00E65588 /* Security.framework in Frameworks */,
 				C3DDD49D1B64A01A00E65588 /* MobileCoreServices.framework in Frameworks */,
 				C3DDD49B1B649FF700E65588 /* CoreData.framework in Frameworks */,
+				C34C67341B783CC200BC49E7 /* CloudKit.framework in Frameworks */,
 				C3DDD4991B649FEA00E65588 /* CFNetwork.framework in Frameworks */,
 				C3DDD4971B649FC400E65588 /* libPods-RestKit.a in Frameworks */,
 				3106F82B88703EE3D3AAF8E3 /* libPods.a in Frameworks */,
@@ -201,17 +217,26 @@
 		C3C8C81A1B49AD70002BFEDB /* LawyerV2 */ = {
 			isa = PBXGroup;
 			children = (
+				C3DE91C21B79AEC10083AC33 /* Main.storyboard */,
+				C34C67321B783C7F00BC49E7 /* LawyerV2.entitlements */,
 				C3C8C81F1B49AD70002BFEDB /* AppDelegate.h */,
 				C3C8C8201B49AD70002BFEDB /* AppDelegate.m */,
+				C3DE91BB1B784A7B0083AC33 /* ClientViewController.h */,
+				C3DE91BC1B784A7B0083AC33 /* ClientViewController.m */,
+				C3DE91C41B79BB6F0083AC33 /* PreClientViewController.h */,
+				C3DE91C51B79BB6F0083AC33 /* PreClientViewController.m */,
+				C3DE91B21B784A330083AC33 /* PostClientViewController.h */,
+				C3DE91B31B784A330083AC33 /* PostClientViewController.m */,
 				C3C8C8221B49AD70002BFEDB /* ViewController.h */,
 				C3C8C8231B49AD70002BFEDB /* ViewController.m */,
-				C3C8C8251B49AD70002BFEDB /* Main.storyboard */,
 				C3C8C8471B53071A002BFEDB /* SCISCoursesTableViewController.h */,
 				C3C8C8481B53071A002BFEDB /* SCISCoursesTableViewController.m */,
 				C3C8C8411B49B575002BFEDB /* SecondViewController.h */,
 				C3C8C8421B49B575002BFEDB /* SecondViewController.m */,
 				C3C8C8441B5199F1002BFEDB /* SCISProgamsTableViewController.h */,
 				C3C8C8451B5199F1002BFEDB /* SCISProgamsTableViewController.m */,
+				C3DE91C71B7D7AE10083AC33 /* Note.h */,
+				C3DE91C81B7D7AE10083AC33 /* Note.m */,
 				C3C8C8281B49AD70002BFEDB /* Images.xcassets */,
 				C3C8C82A1B49AD70002BFEDB /* LaunchScreen.xib */,
 				C3C8C81B1B49AD70002BFEDB /* Supporting Files */,
@@ -264,6 +289,7 @@
 		D79FE2A027DAC33D85C5E16F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C34C67331B783CC200BC49E7 /* CloudKit.framework */,
 				C3DDD4AF1B6D2CC000E65588 /* Social.framework */,
 				C3DDD4A41B64A05500E65588 /* libxml2.dylib */,
 				C3DDD4A21B64A04600E65588 /* QuartzCore.framework */,
@@ -329,6 +355,12 @@
 				TargetAttributes = {
 					C3C8C8171B49AD70002BFEDB = {
 						CreatedOnToolsVersion = 6.3.2;
+						DevelopmentTeam = X7867TMWS4;
+						SystemCapabilities = {
+							com.apple.iCloud = {
+								enabled = 1;
+							};
+						};
 					};
 					C3C8C8301B49AD70002BFEDB = {
 						CreatedOnToolsVersion = 6.3.2;
@@ -418,7 +450,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				C3C8C8271B49AD70002BFEDB /* Main.storyboard in Resources */,
+				C3DE91C31B79AEC10083AC33 /* Main.storyboard in Resources */,
 				C3C8C82C1B49AD70002BFEDB /* LaunchScreen.xib in Resources */,
 				C3C8C8291B49AD70002BFEDB /* Images.xcassets in Resources */,
 			);
@@ -471,6 +503,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C3DE91C91B7D7AE10083AC33 /* Note.m in Sources */,
 				C3C8C8431B49B575002BFEDB /* SecondViewController.m in Sources */,
 				C3C8C8461B5199F1002BFEDB /* SCISProgamsTableViewController.m in Sources */,
 				C3C8C8241B49AD70002BFEDB /* ViewController.m in Sources */,
@@ -479,7 +512,10 @@
 				C3DDD4AB1B64A8CB00E65588 /* Program.m in Sources */,
 				C3C8C8211B49AD70002BFEDB /* AppDelegate.m in Sources */,
 				C3C8C8491B53071A002BFEDB /* SCISCoursesTableViewController.m in Sources */,
+				C3DE91BD1B784A7B0083AC33 /* ClientViewController.m in Sources */,
+				C3DE91C61B79BB6F0083AC33 /* PreClientViewController.m in Sources */,
 				C3C8C81E1B49AD70002BFEDB /* main.m in Sources */,
+				C3DE91B41B784A330083AC33 /* PostClientViewController.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -507,14 +543,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		C3C8C8251B49AD70002BFEDB /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C3C8C8261B49AD70002BFEDB /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C3C8C82A1B49AD70002BFEDB /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -611,10 +639,14 @@
 			baseConfigurationReference = 7EAA743C4673C9D8DB565D52 /* Pods.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = LawyerV2/LawyerV2.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				"HEADER_SEARCH_PATHS[arch=*]" = "\"build/Debug-iphoneos/../../Headers\"";
 				INFOPLIST_FILE = LawyerV2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Debug;
 		};
@@ -623,10 +655,14 @@
 			baseConfigurationReference = E47A3C889D909A3EDB716F70 /* Pods.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = LawyerV2/LawyerV2.entitlements;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				"HEADER_SEARCH_PATHS[arch=*]" = "\"build/Debug-iphoneos/../../Headers\"";
 				INFOPLIST_FILE = LawyerV2/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "";
 			};
 			name = Release;
 		};
