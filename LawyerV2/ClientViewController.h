@@ -8,7 +8,7 @@
 
 #import <UIKit/UIKit.h>
 
-@interface ClientViewController : UIViewController
+@interface ClientViewController : UIViewController <NSStreamDelegate>
 @property (strong) NSString *notes;
 
 - (IBAction)save:(id)sender;

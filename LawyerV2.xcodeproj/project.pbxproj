@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		3106F82B88703EE3D3AAF8E3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A96052A854611760D64FA36E /* libPods.a */; };
+		C3103A7B1B807ED0007E63A5 /* SocketSvc.m in Sources */ = {isa = PBXBuildFile; fileRef = C3103A7A1B807ED0007E63A5 /* SocketSvc.m */; };
 		C34C67341B783CC200BC49E7 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C34C67331B783CC200BC49E7 /* CloudKit.framework */; };
 		C3C8C81E1B49AD70002BFEDB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C8C81D1B49AD70002BFEDB /* main.m */; };
 		C3C8C8211B49AD70002BFEDB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C8C8201B49AD70002BFEDB /* AppDelegate.m */; };
@@ -106,6 +107,8 @@
 /* Begin PBXFileReference section */
 		7EAA743C4673C9D8DB565D52 /* Pods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = Pods.debug.xcconfig; path = "Pods/Target Support Files/Pods/Pods.debug.xcconfig"; sourceTree = "<group>"; };
 		A96052A854611760D64FA36E /* libPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libPods.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3103A791B807ECF007E63A5 /* SocketSvc.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SocketSvc.h; sourceTree = "<group>"; };
+		C3103A7A1B807ED0007E63A5 /* SocketSvc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketSvc.m; sourceTree = "<group>"; };
 		C34C67321B783C7F00BC49E7 /* LawyerV2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = LawyerV2.entitlements; sourceTree = "<group>"; };
 		C34C67331B783CC200BC49E7 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
 		C3C8C8181B49AD70002BFEDB /* LawyerV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LawyerV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -237,6 +240,8 @@
 				C3C8C8451B5199F1002BFEDB /* SCISProgamsTableViewController.m */,
 				C3DE91C71B7D7AE10083AC33 /* Note.h */,
 				C3DE91C81B7D7AE10083AC33 /* Note.m */,
+				C3103A791B807ECF007E63A5 /* SocketSvc.h */,
+				C3103A7A1B807ED0007E63A5 /* SocketSvc.m */,
 				C3C8C8281B49AD70002BFEDB /* Images.xcassets */,
 				C3C8C82A1B49AD70002BFEDB /* LaunchScreen.xib */,
 				C3C8C81B1B49AD70002BFEDB /* Supporting Files */,
@@ -510,6 +515,7 @@
 				C3DDD4A81B64A75300E65588 /* Model.xcdatamodeld in Sources */,
 				C3DDD4AE1B65D46D00E65588 /* Programs.m in Sources */,
 				C3DDD4AB1B64A8CB00E65588 /* Program.m in Sources */,
+				C3103A7B1B807ED0007E63A5 /* SocketSvc.m in Sources */,
 				C3C8C8211B49AD70002BFEDB /* AppDelegate.m in Sources */,
 				C3C8C8491B53071A002BFEDB /* SCISCoursesTableViewController.m in Sources */,
 				C3DE91BD1B784A7B0083AC33 /* ClientViewController.m in Sources */,
