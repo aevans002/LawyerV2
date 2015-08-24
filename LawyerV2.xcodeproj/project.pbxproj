@@ -10,6 +10,10 @@
 		3106F82B88703EE3D3AAF8E3 /* libPods.a in Frameworks */ = {isa = PBXBuildFile; fileRef = A96052A854611760D64FA36E /* libPods.a */; };
 		C3103A7B1B807ED0007E63A5 /* SocketSvc.m in Sources */ = {isa = PBXBuildFile; fileRef = C3103A7A1B807ED0007E63A5 /* SocketSvc.m */; };
 		C34C67341B783CC200BC49E7 /* CloudKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C34C67331B783CC200BC49E7 /* CloudKit.framework */; };
+		C39EC6881B8A4D9E008BA20C /* SocketRocket in Resources */ = {isa = PBXBuildFile; fileRef = C39EC6871B8A4D9E008BA20C /* SocketRocket */; };
+		C39EC6921B8A5999008BA20C /* SRWebSocket.m in Sources */ = {isa = PBXBuildFile; fileRef = C39EC6911B8A5999008BA20C /* SRWebSocket.m */; };
+		C39EC6941B8AD1B6008BA20C /* libicucore.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = C39EC6931B8AD1B6008BA20C /* libicucore.dylib */; };
+		C39EC6961B8AD1D0008BA20C /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C39EC6951B8AD1D0008BA20C /* Foundation.framework */; };
 		C3C8C81E1B49AD70002BFEDB /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C8C81D1B49AD70002BFEDB /* main.m */; };
 		C3C8C8211B49AD70002BFEDB /* AppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C8C8201B49AD70002BFEDB /* AppDelegate.m */; };
 		C3C8C8241B49AD70002BFEDB /* ViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = C3C8C8231B49AD70002BFEDB /* ViewController.m */; };
@@ -111,6 +115,12 @@
 		C3103A7A1B807ED0007E63A5 /* SocketSvc.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SocketSvc.m; sourceTree = "<group>"; };
 		C34C67321B783C7F00BC49E7 /* LawyerV2.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = LawyerV2.entitlements; sourceTree = "<group>"; };
 		C34C67331B783CC200BC49E7 /* CloudKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CloudKit.framework; path = System/Library/Frameworks/CloudKit.framework; sourceTree = SDKROOT; };
+		C39EC6871B8A4D9E008BA20C /* SocketRocket */ = {isa = PBXFileReference; lastKnownFileType = folder; name = SocketRocket; path = "../../../../Downloads/SocketRocket-master/SocketRocket"; sourceTree = "<group>"; };
+		C39EC68F1B8A5982008BA20C /* SocketRocket-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = "SocketRocket-Prefix.pch"; path = "../../../../Downloads/SocketRocket-master/SocketRocket/SocketRocket-Prefix.pch"; sourceTree = "<group>"; };
+		C39EC6901B8A5991008BA20C /* SRWebSocket.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = SRWebSocket.h; path = "../../../../Downloads/SocketRocket-master/SocketRocket/SRWebSocket.h"; sourceTree = "<group>"; };
+		C39EC6911B8A5999008BA20C /* SRWebSocket.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = SRWebSocket.m; path = "../../../../Downloads/SocketRocket-master/SocketRocket/SRWebSocket.m"; sourceTree = "<group>"; };
+		C39EC6931B8AD1B6008BA20C /* libicucore.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libicucore.dylib; path = usr/lib/libicucore.dylib; sourceTree = SDKROOT; };
+		C39EC6951B8AD1D0008BA20C /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		C3C8C8181B49AD70002BFEDB /* LawyerV2.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LawyerV2.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3C8C81C1B49AD70002BFEDB /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		C3C8C81D1B49AD70002BFEDB /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
@@ -160,6 +170,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C39EC6961B8AD1D0008BA20C /* Foundation.framework in Frameworks */,
+				C39EC6941B8AD1B6008BA20C /* libicucore.dylib in Frameworks */,
 				C3DDD4B01B6D2CC000E65588 /* Social.framework in Frameworks */,
 				C3DDD4A51B64A05500E65588 /* libxml2.dylib in Frameworks */,
 				C3DDD4A31B64A04600E65588 /* QuartzCore.framework in Frameworks */,
@@ -242,8 +254,12 @@
 				C3DE91C81B7D7AE10083AC33 /* Note.m */,
 				C3103A791B807ECF007E63A5 /* SocketSvc.h */,
 				C3103A7A1B807ED0007E63A5 /* SocketSvc.m */,
+				C39EC68F1B8A5982008BA20C /* SocketRocket-Prefix.pch */,
+				C39EC6901B8A5991008BA20C /* SRWebSocket.h */,
+				C39EC6911B8A5999008BA20C /* SRWebSocket.m */,
 				C3C8C8281B49AD70002BFEDB /* Images.xcassets */,
 				C3C8C82A1B49AD70002BFEDB /* LaunchScreen.xib */,
+				C39EC6871B8A4D9E008BA20C /* SocketRocket */,
 				C3C8C81B1B49AD70002BFEDB /* Supporting Files */,
 				C3DDD4AC1B65D46D00E65588 /* Programs.h */,
 				C3DDD4AD1B65D46D00E65588 /* Programs.m */,
@@ -294,6 +310,8 @@
 		D79FE2A027DAC33D85C5E16F /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				C39EC6951B8AD1D0008BA20C /* Foundation.framework */,
+				C39EC6931B8AD1B6008BA20C /* libicucore.dylib */,
 				C34C67331B783CC200BC49E7 /* CloudKit.framework */,
 				C3DDD4AF1B6D2CC000E65588 /* Social.framework */,
 				C3DDD4A41B64A05500E65588 /* libxml2.dylib */,
@@ -456,6 +474,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C3DE91C31B79AEC10083AC33 /* Main.storyboard in Resources */,
+				C39EC6881B8A4D9E008BA20C /* SocketRocket in Resources */,
 				C3C8C82C1B49AD70002BFEDB /* LaunchScreen.xib in Resources */,
 				C3C8C8291B49AD70002BFEDB /* Images.xcassets in Resources */,
 			);
@@ -520,6 +539,7 @@
 				C3C8C8491B53071A002BFEDB /* SCISCoursesTableViewController.m in Sources */,
 				C3DE91BD1B784A7B0083AC33 /* ClientViewController.m in Sources */,
 				C3DE91C61B79BB6F0083AC33 /* PreClientViewController.m in Sources */,
+				C39EC6921B8A5999008BA20C /* SRWebSocket.m in Sources */,
 				C3C8C81E1B49AD70002BFEDB /* main.m in Sources */,
 				C3DE91B41B784A330083AC33 /* PostClientViewController.m in Sources */,
 			);
@@ -653,6 +673,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Debug;
 		};
@@ -669,6 +690,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				VALID_ARCHS = "arm64 armv7 armv7s";
 			};
 			name = Release;
 		};

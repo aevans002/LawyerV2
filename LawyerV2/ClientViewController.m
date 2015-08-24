@@ -7,8 +7,8 @@
 //
 
 #import "ClientViewController.h"
-
-@interface ClientViewController ()
+#import "SRWebSocket.h"
+@interface ClientViewController () <SRWebSocketDelegate>
 
 @end
 
@@ -17,6 +17,10 @@
 
 NSInputStream *inputStreamO;
 NSOutputStream *outputStreamO;
+bool isOpen = NO;
+
+
+SRWebSocket *_webSocket;
 
 - (void)viewDidLoad {
     [super viewDidLoad];
@@ -52,7 +56,7 @@ NSOutputStream *outputStreamO;
     
     
     //Added some code to connect to regis
-    CFReadStreamRef readStream;
+    /*CFReadStreamRef readStream;
     CFWriteStreamRef writeStream;
     CFStreamCreatePairWithSocketToHost(NULL, (CFStringRef)@"http://www.regisscis.net", 8080, &readStream, &writeStream);
     inputStreamO = (__bridge NSInputStream *)readStream;
@@ -63,7 +67,15 @@ NSOutputStream *outputStreamO;
     [inputStreamO scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
     [outputStreamO scheduleInRunLoop:[NSRunLoop currentRunLoop] forMode:NSDefaultRunLoopMode];
     [inputStreamO open];
-    [outputStreamO open];
+    [outputStreamO open];*/
+    
+    if (isOpen == NO) {
+        [self createConnection];
+    } else if (isOpen == YES) {
+        [self disconnect];
+    }
+    
+    
 }
 
 - (void) send:(NSString *)msg {
@@ -83,6 +95,9 @@ NSOutputStream *outputStreamO;
     [outputStreamO setDelegate:nil];
     inputStreamO = nil;
     outputStreamO = nil;
+    [_webSocket class];
+    _webSocket = nil;
+    isOpen = NO;
     
 }
 
@@ -101,6 +116,45 @@ NSOutputStream *outputStreamO;
         }
     }
     return msg;
+}
+
+- (void)webSocketDidOpen:(SRWebSocket *)webSocket;
+{
+    NSLog(@"WebSocket connected");
+    self.title = @"Connected";
+}
+
+-(void)webSocket:(SRWebSocket *)webSocket didFailWithError:(NSError *)error;
+{
+    NSLog(@"Websocket failed with error %@", error);
+    self.title = @"Connection failed";
+    _webSocket = nil;
+}
+
+- (void)webSocket:(SRWebSocket *)webSocket didReceiveMessage:(id)message;
+{
+    NSLog(@"Recieved msg: %@", message);
+}
+
+-(void)webSocket:(SRWebSocket *)webSocket didCloseWithCode:(NSInteger)code reason:(NSString *)reason wasClean:(BOOL)wasClean;
+{
+    NSLog(@"WebSocket closed");
+    self.title = @"Connection Closed";
+    _webSocket = nil;
+}
+
+-(void) createConnection {
+    _webSocket = [[SRWebSocket alloc] initWithURLRequest:[NSURLRequest requestWithURL:[NSURL URLWithString:@"ws://echo.websocket.org"]]];
+    _webSocket.delegate = self;
+    
+    self.title = @"Opening socket connection...";
+    [_webSocket open];
+    isOpen = TRUE;
+    
+}
+
+-(void)sendMessage:(NSString*)message {
+    [_webSocket send:message];
 }
 
 
